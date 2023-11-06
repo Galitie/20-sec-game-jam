@@ -4,6 +4,10 @@ extends PathFollow2D
 @export var enemy_health: int = 3
 @export var enemy_speed: int = 150
 
+func _process(delta):
+	pass
+	# if enemy_health <= 0:
+	# die
 	
 func _physics_process(delta):
 	move(delta)
