@@ -4,6 +4,7 @@ extends PathFollow2D
 @export var enemy_health: int = 3
 @export var enemy_speed: int = 150
 
+	
 func _physics_process(delta):
 	move(delta)
 
