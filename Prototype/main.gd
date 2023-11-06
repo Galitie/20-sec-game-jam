@@ -5,7 +5,7 @@ var sec_between_enemies: float = 1
 # enemies have a default health of 3 and a default speed of 150
 var enemies = [ 
 	{"hp": 3, "speed": 150},
-	{"hp": 3, "speed": 250}
+	{"hp": 3, "speed": 250},
 	]
 
 
