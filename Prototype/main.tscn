@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cea8a48vu8quh"]
+
+[ext_resource type="Script" path="res://Prototype/main.gd" id="1_gkpcp"]
+[ext_resource type="PackedScene" uid="uid://f4opx45l5mp5" path="res://Scenes/Enemies/EnemyType1.tscn" id="2_22hwf"]
+[ext_resource type="Script" path="res://Prototype/EnemyPath.gd" id="2_evcy1"]
+
+[sub_resource type="Curve2D" id="Curve2D_l10r2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 15, 430, 0, 0, 0, 0, 163, 430, 0, 0, 0, 0, 165, 184, 0, 0, 0, 0, 453, 188, 0, 0, 0, 0, 450, 642, 0, 0, 0, 0, 703, 641, 0, 0, 0, 0, 703, 365, 0, 0, 0, 0, 962, 365, 0, 0, 0, 0, 962, 128, 0, 0, 0, 0, 1261, 124)
+}
+point_count = 10
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_gkpcp")
+
+[node name="EnemyPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_l10r2")
+script = ExtResource("2_evcy1")
+
+[node name="Enemy" parent="EnemyPath" instance=ExtResource("2_22hwf")]
+position = Vector2(15, 430)
+
+[node name="20SecTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true

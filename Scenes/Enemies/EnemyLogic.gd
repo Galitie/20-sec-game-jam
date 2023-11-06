@@ -2,9 +2,9 @@ extends PathFollow2D
 
 @export_category("Enemy Variables")
 @export var enemy_health: int = 3
-@export var enemy_speed: int = 1
+@export var enemy_speed: int = 150
 
-func physics_process(delta):
+func _physics_process(delta):
 	move(delta)
 
 func move(delta):
