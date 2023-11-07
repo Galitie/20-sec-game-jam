@@ -23,13 +23,25 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if build_mode:
+		update_tower_preview()
 
 
 func initiate_build_mode(tower_type):
 	build_type = tower_type
 	build_mode = true
 	get_node("CanvasLayer").set_tower_preview(build_type, get_global_mouse_position())
+
+
+func update_tower_preview():
+	var mouse_position = get_global_mouse_position()
+	get_node("CanvasLayer").update_tower_preview(mouse_position, "#14FF0084")
+	build_location = mouse_position
+
+
+func cancel_build_mode():
+	pass
+
 
 func start_enemy_wave():
 	for i in enemies.size():
