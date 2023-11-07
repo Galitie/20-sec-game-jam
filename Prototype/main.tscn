@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cea8a48vu8quh"]
+[gd_scene load_steps=7 format=3 uid="uid://cea8a48vu8quh"]
 
-[ext_resource type="Script" path="res://Prototype/main.gd" id="1_gkpcp"]
+[ext_resource type="Script" path="res://Prototype/Main.gd" id="1_udfr5"]
 [ext_resource type="Script" path="res://Prototype/EnemyPath.gd" id="2_evcy1"]
 [ext_resource type="Script" path="res://Prototype/SecondsTimer.gd" id="3_3ds8k"]
+[ext_resource type="Script" path="res://Prototype/UI.gd" id="4_fxjjm"]
+[ext_resource type="PackedScene" uid="uid://b2xbq2abl5y8g" path="res://Scenes/UI/HUD.tscn" id="4_hw5bm"]
 
 [sub_resource type="Curve2D" id="Curve2D_l10r2"]
 _data = {
@@ -11,7 +13,7 @@ _data = {
 point_count = 10
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_gkpcp")
+script = ExtResource("1_udfr5")
 
 [node name="EnemyPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_l10r2")
@@ -22,3 +24,10 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "20 Second Timer"
 script = ExtResource("3_3ds8k")
+
+[node name="TowerContainer" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("4_fxjjm")
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_hw5bm")]
