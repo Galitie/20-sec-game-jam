@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://f4opx45l5mp5"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/Enemy.gd" id="1_hkgds"]
-[ext_resource type="Texture2D" uid="uid://bwsyou5hqi5qo" path="res://icon.svg" id="2_ht0wv"]
+[ext_resource type="Texture2D" uid="uid://brve3sixblr15" path="res://Assets/UI/Enemy.png" id="2_rjvyo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tqb5o"]
 radius = 15.0333
@@ -11,7 +11,7 @@ script = ExtResource("1_hkgds")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_ht0wv")
+texture = ExtResource("2_rjvyo")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
 
