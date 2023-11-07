@@ -27,6 +27,14 @@ func _process(delta):
 		update_tower_preview()
 
 
+func _unhandled_input(event):
+	if event.is_action_released("ui_cancel") and build_mode == true:
+		cancel_build_mode()
+	if event.is_action_released("ui_accept") and build_mode == true:
+		verify_and_build()
+		cancel_build_mode()
+
+
 func initiate_build_mode(tower_type):
 	build_type = tower_type
 	build_mode = true
@@ -40,7 +48,14 @@ func update_tower_preview():
 
 
 func cancel_build_mode():
-	pass
+	build_mode = false
+	get_node("CanvasLayer/TowerPreview").queue_free()
+
+
+func verify_and_build():
+	var new_tower = load("res://Scenes/Towers/" + build_type + ".tscn").instantiate()
+	new_tower.global_position = get_global_mouse_position()
+	get_node("TowerContainer").add_child(new_tower, true)
 
 
 func start_enemy_wave():
