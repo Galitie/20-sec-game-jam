@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://dhm3biq7ch12l"]
 
-[ext_resource type="Texture2D" uid="uid://bdd377ax3qef5" path="res://Assets/UI/Tower2.png" id="1_0lgtp"]
+[ext_resource type="Texture2D" uid="uid://bdd377ax3qef5" path="res://Assets/Towers/Tower2.png" id="1_uy6oc"]
 
-[node name="TowerType1" type="Node2D"]
+[node name="TowerType2" type="Node2D"]
 
 [node name="Base" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_0lgtp")
+texture = ExtResource("1_uy6oc")

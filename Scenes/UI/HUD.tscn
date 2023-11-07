@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2xbq2abl5y8g"]
 
 [ext_resource type="Texture2D" uid="uid://ce18o8kcg5fx0" path="res://Assets/UI/ButtonBackground.png" id="1_t22x8"]
-[ext_resource type="Texture2D" uid="uid://l8oeolqol8mg" path="res://Assets/UI/Tower1.png" id="2_m1gff"]
-[ext_resource type="Texture2D" uid="uid://bdd377ax3qef5" path="res://Assets/UI/Tower2.png" id="3_pwxth"]
-[ext_resource type="Texture2D" uid="uid://4dakacwnclhq" path="res://Assets/UI/Tower3.png" id="4_xxgum"]
+[ext_resource type="Texture2D" uid="uid://l8oeolqol8mg" path="res://Assets/Towers/Tower1.png" id="2_8ix8d"]
+[ext_resource type="Texture2D" uid="uid://bdd377ax3qef5" path="res://Assets/Towers/Tower2.png" id="3_q171d"]
+[ext_resource type="Texture2D" uid="uid://4dakacwnclhq" path="res://Assets/Towers/Tower3.png" id="4_223ym"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -49,7 +49,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="Icon" type="TextureRect" parent="BuildBar/TowerType1/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("2_m1gff")
+texture = ExtResource("2_8ix8d")
 expand_mode = 1
 
 [node name="TowerType2" type="TextureButton" parent="BuildBar" groups=["build_buttons"]]
@@ -75,7 +75,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="Icon" type="TextureRect" parent="BuildBar/TowerType2/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("3_pwxth")
+texture = ExtResource("3_q171d")
 expand_mode = 1
 
 [node name="TowerType3" type="TextureButton" parent="BuildBar" groups=["build_buttons"]]
@@ -101,5 +101,5 @@ theme_override_constants/margin_bottom = 15
 
 [node name="Icon" type="TextureRect" parent="BuildBar/TowerType3/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("4_xxgum")
+texture = ExtResource("4_223ym")
 expand_mode = 1

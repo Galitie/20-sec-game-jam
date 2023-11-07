@@ -19,15 +19,20 @@ script = ExtResource("1_udfr5")
 curve = SubResource("Curve2D_l10r2")
 script = ExtResource("2_evcy1")
 
-[node name="SecondsTimer" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "20 Second Timer"
-script = ExtResource("3_3ds8k")
-
 [node name="TowerContainer" type="Node2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("4_fxjjm")
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("4_hw5bm")]
+
+[node name="SecondsTimer" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -102.0
+offset_bottom = 100.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 71
+script = ExtResource("3_3ds8k")

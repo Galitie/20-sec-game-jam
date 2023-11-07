@@ -1,19 +1,34 @@
 extends Node2D
 
+### ------------------ ###
+###     EDIT ME!
+### vvvvvvvvvvvvvvvvvv ###
+
 var sec_between_enemies = 1
-
-var build_mode = false
-var build_location
-var build_type
-
-# enemies are objects, add a object to the array below to add more enemies
+# enemies and towers are objects, add an object to the arrays below to add more
 # enemies have a default health of 3 and a default speed of 150
 # they will spawn in order from the start of the array to the end
 var enemies = [ 
 	{"hp": 3, "speed": 150},
 	{"hp": 3, "speed": 250},
 	{"hp": 3, "speed": 100},
-	]
+]
+
+# only 3 towers available for prototype, don't add more but feel free to change the values
+var towers = [
+	{"atkdamage": 1, "atkspeed": 300},
+	{"atkdamage": 2, "atkspeed": 250},
+	{"atkdamage": 3, "atkspeed": 100},
+]
+
+### ^^^^^^^^^^^^^^^^^^ ###
+###      EDIT ME!
+### ------------------ ###
+
+var build_mode = false
+var build_location
+var build_type
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
