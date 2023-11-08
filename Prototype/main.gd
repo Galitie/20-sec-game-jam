@@ -28,9 +28,9 @@ var towers = [
 var build_mode = false
 var build_location
 var build_type
+var build_valid
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in get_tree().get_nodes_in_group("build_buttons"):
 		i.pressed.connect(initiate_build_mode.bind(i.name))
@@ -58,19 +58,29 @@ func initiate_build_mode(tower_type):
 
 func update_tower_preview():
 	var mouse_position = get_global_mouse_position()
-	get_node("CanvasLayer").update_tower_preview(mouse_position, "#14FF0084")
-	build_location = mouse_position
+	var current_tile = get_node("TowerExclusion").local_to_map(mouse_position)
+	var tile_position = get_node("TowerExclusion").map_to_local(current_tile)
+	
+	if get_node("TowerExclusion").get_cell_source_id(0, current_tile) == -1:
+		get_node("CanvasLayer").update_tower_preview(tile_position, "#14FF0084")
+		build_valid = true
+		build_location = tile_position
+	else:
+		get_node("CanvasLayer").update_tower_preview(tile_position, "#FF150044")
+		build_valid = false
 
 
 func cancel_build_mode():
 	build_mode = false
+	build_valid = false
 	get_node("CanvasLayer/TowerPreview").queue_free()
 
 
 func verify_and_build():
-	var new_tower = load("res://Scenes/Towers/" + build_type + ".tscn").instantiate()
-	new_tower.global_position = get_global_mouse_position()
-	get_node("TowerContainer").add_child(new_tower, true)
+	if build_valid:
+		var new_tower = load("res://Scenes/Towers/" + build_type + ".tscn").instantiate()
+		new_tower.global_position = build_location
+		get_node("TowerContainer").add_child(new_tower, true)
 
 
 func start_enemy_wave():

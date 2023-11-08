@@ -131,6 +131,7 @@ script = ExtResource("1_udfr5")
 [node name="TowerContainer" type="Node2D" parent="."]
 
 [node name="Map" type="TileMap" parent="."]
+visible = false
 y_sort_enabled = true
 tile_set = SubResource("TileSet_aa16g")
 format = 2
