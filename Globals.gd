@@ -18,14 +18,14 @@ var enemy_data = [
 var tower_data = {
 	"TowerType1" : {
 		"damage": 2, 
-		"firerate": 300, 
+		"firerate": 1, 
 		"range": 350},
 	"TowerType2" : {
 		"damage": 5, 
-		"firerate": 100, 
+		"firerate": 1, 
 		"range": 200},
 	"TowerType3" : {
 		"damage": 1, 
-		"firerate": 600, 
+		"firerate": 1, 
 		"range": 600},
 }
