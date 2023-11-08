@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://f4opx45l5mp5"]
 
-[ext_resource type="Script" path="res://Scenes/Enemies/EnemyLogic.gd" id="1_r00j5"]
+[ext_resource type="Script" path="res://Scenes/Enemies/Enemy.gd" id="1_hkgds"]
 [ext_resource type="Texture2D" uid="uid://brve3sixblr15" path="res://Assets/UI/Enemy.png" id="2_rjvyo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_113g8"]
@@ -13,7 +13,7 @@ bg_color = Color(0.431373, 0.431373, 0.431373, 1)
 bg_color = Color(0.6, 1, 0.6, 1)
 
 [node name="Enemy" type="PathFollow2D"]
-script = ExtResource("1_r00j5")
+script = ExtResource("1_hkgds")
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
 scale = Vector2(0.5, 0.5)
