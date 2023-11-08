@@ -1,12 +1,14 @@
 extends Node
 
+var type
 var enemy_array = []
 var built = false
 var enemy
 
+
 func _ready():
 	if built:
-		self.get_node("Range/CollisionShape2D").get_shape().radius = 0.5 * Globals.tower_data[self.get_name()]["range"]
+		self.get_node("Range/CollisionShape2D").get_shape().radius = 0.5 * Globals.tower_data[type]["range"]
 
 
 func _physics_process(delta):
@@ -17,11 +19,14 @@ func _physics_process(delta):
 
 
 func _on_range_area_entered(area):
-	enemy_array.append(area.get_parent())
+	if area.is_in_group("enemy"):
+		enemy_array.append(area.get_parent())
+		print(enemy_array)
 
 
 func _on_range_area_exited(area):
-	enemy_array.erase(area.get_parent())
+	if area.is_in_group("enemy"):
+		enemy_array.erase(area.get_parent())
 
 # target enemies that are closest to leaving the map
 func select_enemy():

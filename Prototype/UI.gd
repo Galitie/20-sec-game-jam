@@ -5,6 +5,7 @@ func set_tower_preview(tower_type, mouse_position, tower_range):
 	var drag_tower = load("res://Scenes/Towers/" + tower_type + ".tscn").instantiate()
 	drag_tower.set_name("DragTower")
 	drag_tower.modulate = Color("#14FF0084")
+	drag_tower.get_node("Range").queue_free()
 	
 	var range_texture = Sprite2D.new()
 	var scaling = Globals.tower_data[tower_type]["range"] / 600.0
