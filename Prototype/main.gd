@@ -1,30 +1,5 @@
 extends Node2D
 
-### ------------------ ###
-###     EDIT ME!
-### vvvvvvvvvvvvvvvvvv ###
-
-var sec_between_enemies = 1
-# enemies and towers are objects, add an object to the arrays below to add more
-# enemies have a default health of 3 and a default speed of 150
-# they will spawn in order from the start of the array to the end
-var enemies = [ 
-	{"hp": 3, "speed": 150},
-	{"hp": 3, "speed": 250},
-	{"hp": 3, "speed": 100},
-]
-
-# only 3 towers available for prototype, don't add more but feel free to change the values
-var towers = [
-	{"atkdamage": 1, "atkspeed": 300},
-	{"atkdamage": 2, "atkspeed": 250},
-	{"atkdamage": 3, "atkspeed": 100},
-]
-
-### ^^^^^^^^^^^^^^^^^^ ###
-###      EDIT ME!
-### ------------------ ###
-
 var build_mode = false
 var build_location
 var build_type
@@ -56,7 +31,7 @@ func initiate_build_mode(tower_type):
 		cancel_build_mode()
 	build_type = tower_type
 	build_mode = true
-	get_node("CanvasLayer").set_tower_preview(build_type, get_global_mouse_position())
+	get_node("CanvasLayer").set_tower_preview(build_type, get_global_mouse_position(), Globals.tower_data[tower_type]["range"])
 
 
 func update_tower_preview():
@@ -89,11 +64,11 @@ func verify_and_build():
 
 
 func start_enemy_wave():
-	for i in enemies.size():
+	for i in Globals.enemy_data.size():
 		var new_enemy = load('res://Scenes/Enemies/EnemyType1.tscn').instantiate()
-		new_enemy.set("enemy_health", enemies[i]["hp"])
-		new_enemy.set("enemy_speed", enemies[i]["speed"])
+		new_enemy.set("enemy_health", Globals.enemy_data[i]["hp"])
+		new_enemy.set("enemy_speed", Globals.enemy_data[i]["speed"])
 		get_node('EnemyPath').add_child(new_enemy, true)
-		await get_tree().create_timer(sec_between_enemies).timeout
+		await get_tree().create_timer(Globals.sec_between_enemies).timeout
 		
 

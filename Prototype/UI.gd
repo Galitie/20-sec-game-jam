@@ -1,14 +1,13 @@
 extends CanvasLayer
 
-var tower_range = 350
 
-func set_tower_preview(tower_type, mouse_position):
+func set_tower_preview(tower_type, mouse_position, tower_range):
 	var drag_tower = load("res://Scenes/Towers/" + tower_type + ".tscn").instantiate()
 	drag_tower.set_name("DragTower")
 	drag_tower.modulate = Color("#14FF0084")
 	
 	var range_texture = Sprite2D.new()
-	var scaling = tower_range / 600.0
+	var scaling = Globals.tower_data[tower_type]["range"] / 600.0
 	range_texture.scale = Vector2(scaling, scaling)
 	var texture = load("res://Assets/UI/range_overlay.png")
 	range_texture.texture = texture
