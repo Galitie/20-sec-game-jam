@@ -9,12 +9,14 @@ var hp = 5
 func _ready():
 	health_bar.max_value = hp
 	health_bar.value = hp
+	health_bar.set_as_top_level(true)
 	
 func _physics_process(delta):
 	move(delta)
 
 func move(delta):
 	set_progress(get_progress() + enemy_speed * delta)
+	health_bar.position = position - Vector2(32,40)
 
 
 func on_hit(damage):
