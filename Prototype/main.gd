@@ -29,6 +29,7 @@ var build_mode = false
 var build_location
 var build_type
 var build_valid
+var build_tile
 
 
 func _ready():
@@ -65,6 +66,7 @@ func update_tower_preview():
 		get_node("CanvasLayer").update_tower_preview(tile_position, "#14FF0084")
 		build_valid = true
 		build_location = tile_position
+		build_tile = current_tile
 	else:
 		get_node("CanvasLayer").update_tower_preview(tile_position, "#FF150044")
 		build_valid = false
@@ -81,6 +83,7 @@ func verify_and_build():
 		var new_tower = load("res://Scenes/Towers/" + build_type + ".tscn").instantiate()
 		new_tower.global_position = build_location
 		get_node("TowerContainer").add_child(new_tower, true)
+		get_node("TowerExclusion").set_cell(0, build_tile, 2, Vector2i(0,0))
 
 
 func start_enemy_wave():
