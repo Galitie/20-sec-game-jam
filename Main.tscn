@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://cea8a48vu8quh"]
 
-[ext_resource type="Script" path="res://Prototype/Main.gd" id="1_udfr5"]
-[ext_resource type="Texture2D" uid="uid://dxsd5sp3y320" path="res://Assets/Environment/CosmicLilac_Tiles.png" id="2_acea7"]
-[ext_resource type="Texture2D" uid="uid://byr85uwhbbncp" path="res://Assets/Environment/Exclusion_Tileset.png" id="3_0au4d"]
-[ext_resource type="Script" path="res://Prototype/SecondsTimer.gd" id="3_3ds8k"]
-[ext_resource type="Script" path="res://Prototype/UI.gd" id="4_fxjjm"]
-[ext_resource type="PackedScene" uid="uid://b2xbq2abl5y8g" path="res://Scenes/UI/HUD.tscn" id="4_hw5bm"]
+[ext_resource type="Script" path="res://Main.gd" id="1_bjdl2"]
+[ext_resource type="Texture2D" uid="uid://dxsd5sp3y320" path="res://Assets/Environment/CosmicLilac_Tiles.png" id="2_ek4xb"]
+[ext_resource type="Texture2D" uid="uid://byr85uwhbbncp" path="res://Assets/Environment/Exclusion_Tileset.png" id="3_geeey"]
+[ext_resource type="Script" path="res://Scenes/UI/UI.gd" id="4_skcve"]
+[ext_resource type="PackedScene" uid="uid://b2xbq2abl5y8g" path="res://Scenes/UI/HUD.tscn" id="5_1kwpv"]
+[ext_resource type="Script" path="res://Scenes/UI/SecondsTimer.gd" id="6_miorv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8p36"]
-texture = ExtResource("2_acea7")
+texture = ExtResource("2_ek4xb")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -116,7 +116,7 @@ texture_region_size = Vector2i(64, 64)
 12:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25r6y"]
-texture = ExtResource("3_0au4d")
+texture = ExtResource("3_geeey")
 texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 0:0/0 = 0
@@ -133,7 +133,7 @@ _data = {
 point_count = 12
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_udfr5")
+script = ExtResource("1_bjdl2")
 
 [node name="Map" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -171,9 +171,9 @@ scale = Vector2(1.00216, 1)
 curve = SubResource("Curve2D_l10r2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("4_fxjjm")
+script = ExtResource("4_skcve")
 
-[node name="UI" parent="CanvasLayer" instance=ExtResource("4_hw5bm")]
+[node name="UI" parent="CanvasLayer" instance=ExtResource("5_1kwpv")]
 
 [node name="SecondsTimer" type="Label" parent="CanvasLayer"]
 anchors_preset = 1
@@ -184,4 +184,4 @@ offset_bottom = 100.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 71
-script = ExtResource("3_3ds8k")
+script = ExtResource("6_miorv")
