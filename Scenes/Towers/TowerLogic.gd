@@ -4,6 +4,7 @@ var type
 var enemy_array = []
 var built = false
 var enemy
+var ready_to_fire = true
 
 
 func _ready():
@@ -14,6 +15,8 @@ func _ready():
 func _physics_process(delta):
 	if enemy_array.size() !=0 and built:
 		select_enemy()
+		if ready_to_fire:
+			fire()
 	else:
 		enemy = null
 
@@ -21,7 +24,6 @@ func _physics_process(delta):
 func _on_range_area_entered(area):
 	if area.is_in_group("enemy"):
 		enemy_array.append(area.get_parent())
-		print(enemy_array)
 
 
 func _on_range_area_exited(area):
@@ -36,3 +38,9 @@ func select_enemy():
 	var max_offset = enemy_progress_array.max()
 	var enemy_index = enemy_progress_array.find(max_offset)
 	enemy = enemy_array[enemy_index]
+
+func fire():
+	ready_to_fire = false
+	enemy.on_hit(Globals.tower_data[type]["damage"])
+	await(get_tree().create_timer(Globals.tower_data[type]["firerate"]).timeout)
+	ready_to_fire = true
