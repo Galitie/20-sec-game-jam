@@ -5,7 +5,6 @@ var hp = 5
 
 @onready var health_bar = get_node("HealthBar")
 
-
 func _ready():
 	health_bar.max_value = hp
 	health_bar.value = hp
