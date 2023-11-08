@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cea8a48vu8quh"]
+[gd_scene load_steps=11 format=3 uid="uid://cea8a48vu8quh"]
 
 [ext_resource type="Script" path="res://Prototype/Main.gd" id="1_udfr5"]
 [ext_resource type="Texture2D" uid="uid://dxsd5sp3y320" path="res://Assets/Environment/CosmicLilac_Tiles.png" id="2_acea7"]
-[ext_resource type="Script" path="res://Prototype/EnemyPath.gd" id="2_evcy1"]
 [ext_resource type="Texture2D" uid="uid://byr85uwhbbncp" path="res://Assets/Environment/Exclusion_Tileset.png" id="3_0au4d"]
 [ext_resource type="Script" path="res://Prototype/SecondsTimer.gd" id="3_3ds8k"]
 [ext_resource type="Script" path="res://Prototype/UI.gd" id="4_fxjjm"]
@@ -171,7 +170,6 @@ layer_0/tile_data = PackedInt32Array(131072, 458753, 3, 131073, 458753, 3, 13107
 position = Vector2(-2.97403, 0)
 scale = Vector2(1.00216, 1)
 curve = SubResource("Curve2D_l10r2")
-script = ExtResource("2_evcy1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("4_fxjjm")

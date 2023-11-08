@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsad77ed5ierv"]
+[gd_scene load_steps=4 format=3 uid="uid://bsad77ed5ierv"]
 
 [ext_resource type="Texture2D" uid="uid://l8oeolqol8mg" path="res://Assets/Towers/Tower1.png" id="1_on6dc"]
+[ext_resource type="Script" path="res://Scenes/Towers/TowerLogic.gd" id="1_ttcke"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ph3hg"]
 
 [node name="TowerType1" type="Node2D"]
+script = ExtResource("1_ttcke")
 
 [node name="Base" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_on6dc")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_ph3hg")
+
+[connection signal="area_entered" from="Range" to="." method="_on_range_area_entered"]
+[connection signal="area_exited" from="Range" to="." method="_on_range_area_exited"]

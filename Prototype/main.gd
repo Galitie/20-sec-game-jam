@@ -59,6 +59,7 @@ func verify_and_build():
 	if build_valid:
 		var new_tower = load("res://Scenes/Towers/" + build_type + ".tscn").instantiate()
 		new_tower.global_position = build_location
+		new_tower.built = true
 		get_node("TowerContainer").add_child(new_tower, true)
 		get_node("TowerExclusion").set_cell(0, build_tile, 2, Vector2i(0,0))
 
