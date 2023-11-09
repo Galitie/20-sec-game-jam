@@ -22,6 +22,7 @@ offset_left = -62.0
 offset_top = -62.0
 offset_right = 66.0
 offset_bottom = 66.0
+action_mode = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("2_rjvyo")
@@ -38,3 +39,4 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_cwr8l")
 show_percentage = false
 
 [connection signal="button_up" from="Area2D/Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Area2D/Button" to="." method="_on_button_pressed"]

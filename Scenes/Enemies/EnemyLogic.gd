@@ -29,6 +29,6 @@ func on_destroy():
 	self.queue_free()
 
 
-func _on_button_button_up():
+func _on_button_pressed():
 	on_hit(1)
 	print("ouchie!")
