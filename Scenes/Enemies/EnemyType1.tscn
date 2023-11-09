@@ -15,6 +15,14 @@ script = ExtResource("1_r00j5")
 [node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
 scale = Vector2(0.5, 0.5)
 
+[node name="Button" type="Button" parent="Area2D"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(128, 128)
+offset_left = -62.0
+offset_top = -62.0
+offset_right = 66.0
+offset_bottom = 66.0
+
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("2_rjvyo")
 
@@ -28,3 +36,5 @@ offset_right = 30.0
 offset_bottom = -34.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_cwr8l")
 show_percentage = false
+
+[connection signal="button_up" from="Area2D/Button" to="." method="_on_button_button_up"]

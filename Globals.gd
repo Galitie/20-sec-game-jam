@@ -14,6 +14,8 @@ var enemy_data = [
 	{"hp": 5, "speed": 150},
 	{"hp": 10, "speed": 250},
 	{"hp": 3, "speed": 100},
+	{"hp": 3, "speed": 100},
+	{"hp": 3, "speed": 100},
 ]
 
 # only 3 towers available for prototype, don't add more but feel free to change the values
@@ -23,7 +25,7 @@ var tower_data = {
 	"TowerType1" : {
 		"damage": 1, 
 		"firerate": .5, 
-		"range": 350},
+		"range": 200},
 	"TowerType2" : {
 		"damage": 3, 
 		"firerate": 1, 

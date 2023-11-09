@@ -27,3 +27,8 @@ func on_hit(damage):
 
 func on_destroy():
 	self.queue_free()
+
+
+func _on_button_button_up():
+	on_hit(1)
+	print("ouchie!")
