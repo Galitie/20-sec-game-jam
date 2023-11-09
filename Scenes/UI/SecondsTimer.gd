@@ -7,6 +7,7 @@ var seconds: int = 0
 func _process(delta) -> void:
 	time -= delta
 	seconds = fmod(time, 60)
+	
 	if time < 1:
 		text = "Time's up!"
 		stop()

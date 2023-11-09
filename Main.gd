@@ -12,7 +12,7 @@ func _ready():
 		i.pressed.connect(initiate_build_mode.bind(i.name))
 	start_enemy_wave()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	if build_mode:
 		update_tower_preview()
