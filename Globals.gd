@@ -22,7 +22,7 @@ var enemy_data = [
 	{"hp": 2, "speed": 250},
 	{"hp": 2, "speed": 250},
 	{"hp": 2, "speed": 100},
-	{"hp": 2, "speed": 100},
+	{"hp": 10, "speed": 100},
 	{"hp": 2, "speed": 700},
 	{"hp": 2, "speed": 150},
 	{"hp": 2, "speed": 250},
@@ -39,7 +39,7 @@ var enemy_data = [
 	{"hp": 2, "speed": 350},
 	{"hp": 2, "speed": 500},
 	{"hp": 2, "speed": 100},
-	{"hp": 2, "speed": 700},
+	{"hp": 10, "speed": 300},
 ]
 
 # only 3 towers available for prototype, don't add more but feel free to change the values

@@ -38,5 +38,4 @@ offset_bottom = -34.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_cwr8l")
 show_percentage = false
 
-[connection signal="button_up" from="Area2D/Button" to="." method="_on_button_button_up"]
 [connection signal="pressed" from="Area2D/Button" to="." method="_on_button_pressed"]
