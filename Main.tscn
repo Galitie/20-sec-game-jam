@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cea8a48vu8quh"]
+[gd_scene load_steps=12 format=3 uid="uid://cea8a48vu8quh"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_bjdl2"]
 [ext_resource type="Texture2D" uid="uid://dxsd5sp3y320" path="res://Assets/Environment/CosmicLilac_Tiles.png" id="2_ek4xb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/UI.gd" id="4_skcve"]
 [ext_resource type="PackedScene" uid="uid://b2xbq2abl5y8g" path="res://Scenes/UI/HUD.tscn" id="5_1kwpv"]
 [ext_resource type="Script" path="res://Scenes/UI/SecondsTimer.gd" id="6_miorv"]
+[ext_resource type="AudioStream" uid="uid://ty5uo2e5kyc7" path="res://Assets/Environment/BG_Music-Atmosphere.mp3" id="7_ke4bo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8p36"]
 texture = ExtResource("2_ek4xb")
@@ -128,9 +129,9 @@ sources/2 = SubResource("TileSetAtlasSource_25r6y")
 
 [sub_resource type="Curve2D" id="Curve2D_l10r2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -28.9634, 151, 0, 0, 0, 0, 290.347, 156, 0, 0, 0, 0, 292.341, 351, 0, 0, 0, 0, 481.931, 351, 0, 0, 0, 0, 479.935, 611, 0, 0, 0, 0, 674.514, 611, 0, 0, 0, 0, 672.518, 160, 0, 0, 0, 0, 805.231, 160, 0, 0, 0, 0, 797.248, 675, 0, 0, 0, 0, 1188.4, 675, 0, 0, 0, 0, 1184.41, 349, 0, 0, 0, 0, 1313.14, 351)
+"points": PackedVector2Array(85.4111, 500.067, -85.4111, -500.067, 231.63, 544, 0, 0, 0, 0, 697.78, 54, -37.1952, -396.945, 37.1952, 396.945, 1160.03, 359, 0, 0, 0, 0, 708.507, 660, -13.776, 233.082, 13.776, -233.082, 383.762, 444, 0, 0, 0, 0, 675.35, 253, 6.88799, -128.548, -6.88799, 128.548, 1018.62, 400, 0, 0, 0, 0, 728.012, 554, 13.776, 108.772, -13.776, -108.772, 557.35, 451, 0, 0, 0, 0, 781.648, 380)
 }
-point_count = 12
+point_count = 10
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bjdl2")
@@ -161,13 +162,12 @@ y_sort_enabled = true
 tile_set = SubResource("TileSet_aa16g")
 format = 2
 layer_0/name = "Path"
-layer_0/tile_data = PackedInt32Array(131072, 458753, 3, 131073, 458753, 3, 131074, 131073, 2, 131075, 393217, 3, 131076, 131073, 2, 196612, 458753, 3, 262148, 131073, 2, 327684, 524289, 3, 327685, 524289, 3, 327686, 393217, 3, 327687, 458753, 3, 393223, 524289, 3, 458759, 131073, 2, 524295, 524289, 3, 589831, 524289, 3, 589832, 458753, 3, 589833, 458753, 3, 131082, 524289, 3, 196618, 458753, 3, 262154, 458753, 3, 327690, 524289, 3, 393226, 131073, 2, 458762, 131073, 2, 524298, 393217, 3, 589834, 131073, 2, 131083, 131073, 2, 131084, 524289, 3, 196620, 131073, 2, 262156, 458753, 3, 327692, 131073, 2, 393228, 524289, 3, 458764, 393217, 3, 524300, 524289, 3, 589836, 458753, 3, 655372, 458753, 3, 655373, 458753, 3, 655374, 524289, 3, 655375, 458753, 3, 655376, 524289, 3, 655377, 458753, 3, 327698, 131073, 2, 393234, 458753, 3, 458770, 131073, 2, 524306, 458753, 3, 589842, 393217, 3, 655378, 524289, 3, 327699, 458753, 3, 196607, 524289, 3, 327700, 131073, 2)
 
 [node name="TowerContainer" type="Node2D" parent="."]
 
 [node name="EnemyPath" type="Path2D" parent="."]
-position = Vector2(-2.97403, 0)
-scale = Vector2(1.00216, 1)
+position = Vector2(-33.5176, 0)
+scale = Vector2(1.02542, 1)
 curve = SubResource("Curve2D_l10r2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -185,3 +185,6 @@ grow_horizontal = 0
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 71
 script = ExtResource("6_miorv")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ke4bo")

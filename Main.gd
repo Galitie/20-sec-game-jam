@@ -7,10 +7,12 @@ var build_valid
 var build_tile
 
 
+
 func _ready():
 	for i in get_tree().get_nodes_in_group("build_buttons"):
 		i.pressed.connect(initiate_build_mode.bind(i.name))
 	start_enemy_wave()
+#	$BackgroundMusic.play()
 
 
 func _process(delta):

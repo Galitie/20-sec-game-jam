@@ -9,13 +9,21 @@ var sec_between_enemies = 1
 # currently they just keep looping when they reach the end of the path
 var enemy_data = [ 
 	{"hp": 3, "speed": 150},
-	{"hp": 10, "speed": 250},
-	{"hp": 1, "speed": 100},
-	{"hp": 5, "speed": 150},
-	{"hp": 10, "speed": 250},
+	{"hp": 3, "speed": 250},
+	{"hp": 3, "speed": 100},
+	{"hp": 3, "speed": 350},
+	{"hp": 3, "speed": 500},
 	{"hp": 3, "speed": 100},
 	{"hp": 3, "speed": 100},
+	{"hp": 3, "speed": 700},
+	{"hp": 3, "speed": 200},
+	{"hp": 3, "speed": 250},
 	{"hp": 3, "speed": 100},
+	{"hp": 3, "speed": 150},
+	{"hp": 3, "speed": 350},
+	{"hp": 3, "speed": 100},
+	{"hp": 3, "speed": 100},
+	{"hp": 3, "speed": 700},
 ]
 
 # only 3 towers available for prototype, don't add more but feel free to change the values

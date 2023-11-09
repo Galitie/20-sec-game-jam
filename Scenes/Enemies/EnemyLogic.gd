@@ -31,4 +31,3 @@ func on_destroy():
 
 func _on_button_pressed():
 	on_hit(1)
-	print("ouchie!")
