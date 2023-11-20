@@ -30,7 +30,7 @@ func _on_range_area_exited(area):
 	if area.is_in_group("enemy"):
 		enemy_array.erase(area.get_parent())
 
-# target enemies that are closest to leaving the map
+ #target enemies that are closest to leaving the map
 func select_enemy():
 	var enemy_progress_array = []
 	for i in enemy_array:
@@ -38,6 +38,7 @@ func select_enemy():
 	var max_offset = enemy_progress_array.max()
 	var enemy_index = enemy_progress_array.find(max_offset)
 	enemy = enemy_array[enemy_index]
+
 
 func fire():
 	ready_to_fire = false

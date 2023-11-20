@@ -8,12 +8,18 @@ func _process(delta) -> void:
 	time -= delta
 	seconds = fmod(time, 60)
 	
-	if time < 1:
-		text = "Time's up!"
+	if get_node("/root/Main/EnemyPath").get_child_count() == 0:
 		stop()
+		get_node("/root/Main/Button").visible = true
+		text = "You've reached Meowvana!"
+	elif time < 1:
+		stop()
+		get_node("/root/Main/Button").visible = true
+		text = "You've reached Meowvana!"
 	else:
 		text = "%02d" % seconds
 
 func stop() -> void:
 	set_process(false)
+	text = "You got distracted..."
 

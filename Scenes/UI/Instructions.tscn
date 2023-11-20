@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=3 uid="uid://b4772vrv0u6hr"]
+
+[ext_resource type="Texture2D" uid="uid://b01ii367yhkqn" path="res://Assets/Environment/catk_backdrop.png" id="1_5eqwn"]
+[ext_resource type="Script" path="res://Scenes/UI/Instructions.gd" id="1_th4st"]
+[ext_resource type="FontFile" uid="uid://faelcbda38ie" path="res://Assets/Fonts/Lemonada-Bold.ttf" id="2_pxe3p"]
+[ext_resource type="StyleBox" uid="uid://r5shaij5jhuj" path="res://Scenes/UI/MainMenuButton.tres" id="3_rxggd"]
+[ext_resource type="Texture2D" uid="uid://l3q1vfqhcvh1" path="res://Assets/Enemies/evil_mouse.png" id="6_8wa1s"]
+[ext_resource type="Texture2D" uid="uid://26xt87euxytj" path="res://Assets/Enemies/evil_rat.png" id="7_a58qp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gr6rv"]
+bg_color = Color(0.337255, 0.211765, 0.356863, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 40.0
+expand_margin_top = 10.0
+expand_margin_right = 40.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eavcy"]
+bg_color = Color(0.254902, 0.223529, 0.329412, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 40.0
+expand_margin_top = 10.0
+expand_margin_right = 40.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ishau"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_th4st")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_5eqwn")
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_pxe3p")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center]How to play:"
+fit_content = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 336.0
+offset_top = -136.0
+offset_right = 528.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_pxe3p")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_rxggd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gr6rv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eavcy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ishau")
+text = "Ascend..."
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 104.0
+offset_bottom = 234.0
+scale = Vector2(28.72, 7.6)
+color = Color(1, 1, 1, 0.623529)
+
+[node name="Mouse" type="Sprite2D" parent="."]
+position = Vector2(512, 408)
+scale = Vector2(0.171346, 0.171346)
+texture = ExtResource("6_8wa1s")
+
+[node name="Rat" type="Sprite2D" parent="."]
+position = Vector2(752, 384)
+scale = Vector2(0.251346, 0.251346)
+texture = ExtResource("7_a58qp")
+
+[node name="Instructions" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 136.0
+offset_top = 248.0
+offset_right = -128.0
+offset_bottom = 314.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.25098, 0.219608, 0.321569, 1)
+theme_override_fonts/normal_font = ExtResource("2_pxe3p")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "[center]Don't let distrations reach the cat! Click the mouse and rats to remove them from the cat's thoughts.
+ If you can help the cat stay focused for 20 seconds, you win!"
+fit_content = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

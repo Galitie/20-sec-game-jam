@@ -12,7 +12,7 @@ func _ready():
 	for i in get_tree().get_nodes_in_group("build_buttons"):
 		i.pressed.connect(initiate_build_mode.bind(i.name))
 	start_enemy_wave()
-#	$BackgroundMusic.play()
+	$BackgroundMusic.play()
 
 
 func _process(delta):
@@ -72,7 +72,11 @@ func start_enemy_wave():
 		var new_enemy = load('res://Scenes/Enemies/EnemyType1.tscn').instantiate()
 		new_enemy.set("hp", Globals.enemy_data[i]["hp"])
 		new_enemy.set("enemy_speed", Globals.enemy_data[i]["speed"])
+		new_enemy.set("boss", Globals.enemy_data[i]["boss"])#Ben Add
 		get_node('EnemyPath').add_child(new_enemy, true)
 		await get_tree().create_timer(Globals.sec_between_enemies).timeout
-		
+
+
+func _on_button_pressed():
+	get_tree().reload_current_scene()
 
