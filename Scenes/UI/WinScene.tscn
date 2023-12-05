@@ -1,0 +1,118 @@
+[gd_scene load_steps=13 format=3 uid="uid://dsy6mdy2i3tq"]
+
+[ext_resource type="Texture2D" uid="uid://c1lcg2253jvn6" path="res://Assets/Environment/nirvana_backdrop.png" id="1_a5y70"]
+[ext_resource type="Script" path="res://Scenes/UI/WinScene.gd" id="1_dgrkh"]
+[ext_resource type="Texture2D" uid="uid://c552krurgx2ii" path="res://Assets/Environment/cat_only.png" id="1_jw6ak"]
+[ext_resource type="FontFile" uid="uid://faelcbda38ie" path="res://Assets/Fonts/Lemonada-Bold.ttf" id="2_4wamr"]
+[ext_resource type="StyleBox" uid="uid://r5shaij5jhuj" path="res://Scenes/UI/MainMenuButton.tres" id="3_fcoft"]
+[ext_resource type="Script" path="res://Scenes/UI/AnimationPlayer.gd" id="4_fmeav"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlore"]
+bg_color = Color(0.337255, 0.211765, 0.356863, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 40.0
+expand_margin_top = 10.0
+expand_margin_right = 40.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_faqgu"]
+bg_color = Color(0.254902, 0.223529, 0.329412, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 40.0
+expand_margin_top = 10.0
+expand_margin_right = 40.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgssn"]
+
+[sub_resource type="Animation" id="Animation_0dywh"]
+resource_name = "hover"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1.1487, 1.10957),
+"update": 0,
+"values": [Vector2(600, 350), Vector2(600, 340)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tqoib"]
+_data = {
+"hover": SubResource("Animation_0dywh")
+}
+
+[sub_resource type="Environment" id="Environment_snpxg"]
+background_mode = 3
+glow_enabled = true
+glow_hdr_threshold = 0.37
+glow_hdr_scale = 4.0
+
+[node name="WinScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dgrkh")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_a5y70")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(2, 2, 2, 1)
+position = Vector2(600, 340.576)
+scale = Vector2(0.74356, 0.74356)
+texture = ExtResource("1_jw6ak")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 560.0
+offset_right = 738.0
+offset_bottom = 625.0
+theme_override_fonts/font = ExtResource("2_4wamr")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_fcoft")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dlore")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_faqgu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lgssn")
+text = "Play Again?"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tqoib")
+}
+script = ExtResource("4_fmeav")
+
+[node name="WinText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 32.0
+offset_right = 1216.0
+offset_bottom = 178.0
+size_flags_horizontal = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.415686)
+theme_override_fonts/font = ExtResource("2_4wamr")
+theme_override_font_sizes/font_size = 71
+text = "You've reached Meowvana!"
+horizontal_alignment = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_snpxg")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

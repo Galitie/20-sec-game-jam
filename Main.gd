@@ -69,12 +69,12 @@ func verify_and_build():
 
 func start_enemy_wave():
 	for i in Globals.enemy_data.size():
-		var new_enemy = load('res://Scenes/Enemies/EnemyType1.tscn').instantiate()
+		var new_enemy = load('res://Scenes/Enemies/EnemyType' + str(Globals.enemy_data[i]["type"]) + '.tscn').instantiate()
 		new_enemy.set("hp", Globals.enemy_data[i]["hp"])
 		new_enemy.set("enemy_speed", Globals.enemy_data[i]["speed"])
-		new_enemy.set("boss", Globals.enemy_data[i]["boss"])#Ben Add
+		new_enemy.set("type", Globals.enemy_data[i]["type"])
 		get_node('EnemyPath').add_child(new_enemy, true)
-		await get_tree().create_timer(Globals.sec_between_enemies).timeout
+		await get_tree().create_timer(Globals.enemy_data[i]["time"]).timeout
 
 
 func _on_button_pressed():

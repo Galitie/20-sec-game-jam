@@ -57,43 +57,22 @@ bbcode_enabled = true
 text = "[center]How to play:"
 fit_content = true
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 336.0
-offset_top = -136.0
-offset_right = 528.0
-offset_bottom = -71.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_pxe3p")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("3_rxggd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_gr6rv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eavcy")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ishau")
-text = "Ascend..."
-
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 192.0
 offset_right = 104.0
-offset_bottom = 234.0
+offset_bottom = 243.0
 scale = Vector2(28.72, 7.6)
 color = Color(1, 1, 1, 0.623529)
 
 [node name="Mouse" type="Sprite2D" parent="."]
-position = Vector2(512, 408)
+position = Vector2(511.729, 456.689)
 scale = Vector2(0.171346, 0.171346)
 texture = ExtResource("6_8wa1s")
 
 [node name="Rat" type="Sprite2D" parent="."]
-position = Vector2(752, 384)
+position = Vector2(751.729, 432.689)
 scale = Vector2(0.251346, 0.251346)
 texture = ExtResource("7_a58qp")
 
@@ -110,8 +89,30 @@ theme_override_colors/default_color = Color(0.25098, 0.219608, 0.321569, 1)
 theme_override_fonts/normal_font = ExtResource("2_pxe3p")
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
-text = "[center]Don't let distrations reach the cat! Click the mouse and rats to remove them from the cat's thoughts.
+text = "[center]Don't let distrations reach the cat!
+Click the mice and rats to remove them from the cat's thoughts.
  If you can help the cat stay focused for 20 seconds, you win!"
 fit_content = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -152.0
+offset_right = 96.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_pxe3p")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_rxggd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gr6rv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eavcy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ishau")
+text = "Ascend..."
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

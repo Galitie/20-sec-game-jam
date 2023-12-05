@@ -12,7 +12,7 @@ config_version=5
 
 config/name="20SecGameJam"
 run/main_scene="res://Scenes/UI/MainMenu.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -24,6 +24,7 @@ Globals="*res://Globals.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://Assets/Environment/cursor.png"
 
 [input]
 

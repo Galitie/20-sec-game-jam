@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://f4opx45l5mp5"]
+[gd_scene load_steps=6 format=3 uid="uid://jdghegrh284o"]
 
-[ext_resource type="Script" path="res://Scenes/Enemies/EnemyLogic.gd" id="1_r00j5"]
-[ext_resource type="Texture2D" uid="uid://l3q1vfqhcvh1" path="res://Assets/Enemies/evil_mouse.png" id="2_f2chu"]
+[ext_resource type="Script" path="res://Scenes/Enemies/EnemyLogic.gd" id="1_cowwi"]
+[ext_resource type="Texture2D" uid="uid://26xt87euxytj" path="res://Assets/Enemies/evil_rat.png" id="2_kqbw0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_113g8"]
-size = Vector2(230.769, 140.923)
+size = Vector2(220, 128)
 
 [sub_resource type="Animation" id="Animation_8scls"]
 resource_name = "hit"
@@ -17,11 +17,11 @@ _data = {
 
 [node name="Enemy" type="PathFollow2D"]
 loop = false
-script = ExtResource("1_r00j5")
+script = ExtResource("1_cowwi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["enemy"]]
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("2_f2chu")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_kqbw0")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" groups=["enemy"]]
 scale = Vector2(4, 4)
@@ -36,7 +36,7 @@ offset_bottom = 66.0
 action_mode = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-position = Vector2(7.69231, -6.46154)
+position = Vector2(-1.37091e-05, 0)
 shape = SubResource("RectangleShape2D_113g8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
